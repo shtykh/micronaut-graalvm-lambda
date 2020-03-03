@@ -1,7 +1,7 @@
 #!/bin/sh
-docker build . -t complete
+docker build . -t prime-finder
 mkdir -p build
-docker run --rm --entrypoint cat complete  /home/application/function.zip > build/function.zip
+docker run --rm --entrypoint cat prime-finder  /home/application/function.zip > build/function.zip
 
 sam local start-api -t sam.yaml -p 3000
 
